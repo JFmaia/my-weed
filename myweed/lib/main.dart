@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myweed/modules/splash/splash_page.dart';
+import 'package:myweed/shared/theme/colors.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +12,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(),
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: AppColors.primary,
+        canvasColor: AppColors.secundary,
+      ),
       home: SplashPage(),
     );
   }
