@@ -7,7 +7,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.gradient_splash_primary,
+      backgroundColor: AppColors.primary,
       body: Column(),
     );
   }
