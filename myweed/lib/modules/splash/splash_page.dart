@@ -16,18 +16,9 @@ class SplashPage extends StatelessWidget {
       ),
     );
     return Scaffold(
+      backgroundColor: AppColors.gradient_splash_primary,
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              AppColors.gradient_splash_primary,
-              AppColors.gradient_splash_secundary,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
         child: Center(
           child: Container(
             height: 200,
