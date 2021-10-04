@@ -16,7 +16,7 @@ class SplashPage extends StatelessWidget {
       ),
     );
     return Scaffold(
-      backgroundColor: AppColors.gradient_splash_primary,
+      backgroundColor: AppColors.primary,
       body: Container(
         width: double.infinity,
         child: Center(
