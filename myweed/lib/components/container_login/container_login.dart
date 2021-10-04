@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myweed/shared/theme/colors.dart';
 
 class ContainerLogin extends StatefulWidget {
   const ContainerLogin({Key? key}) : super(key: key);
@@ -11,8 +12,38 @@ class _ContainerLoginState extends State<ContainerLogin> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: AppColors.grey,
+      ),
       child: Column(
-        children: [],
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            decoration: const BoxDecoration(
+              border: Border(
+                bottom: BorderSide(color: Color(0xFF020B04)),
+              ),
+            ),
+            child: TextField(
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: "Email or Phone number",
+                hintStyle: TextStyle(color: Colors.white54),
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            child: TextField(
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: "Password",
+                hintStyle: TextStyle(color: Colors.white54),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
