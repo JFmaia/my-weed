@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myweed/components/button_login/button_login.dart';
 import 'package:myweed/components/container_login/container_login.dart';
+import 'package:myweed/modules/home/home_page.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
 class LoginPage extends StatelessWidget {
@@ -51,7 +52,14 @@ class LoginPage extends StatelessWidget {
                   text: "Entrar",
                   corButton: AppColors.secundary,
                   corText: Colors.white,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => HomePage(),
+                      ),
+                    );
+                  },
                 ),
                 SizedBox(height: 12),
                 ButtonLogin(
