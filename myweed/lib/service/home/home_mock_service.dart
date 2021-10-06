@@ -6,42 +6,34 @@ class HomeMockService implements HomeService {
     Categorys(
       id: "1",
       text: "Sativas",
-      isSelected: false,
     ),
     Categorys(
       id: "2",
       text: "Indicas",
-      isSelected: false,
     ),
     Categorys(
       id: "3",
       text: "Hibridas",
-      isSelected: false,
     ),
     Categorys(
       id: "4",
       text: "Extrações",
-      isSelected: false,
     ),
     Categorys(
       id: "5",
       text: "Comestiveis",
-      isSelected: false,
     ),
     Categorys(
       id: "6",
       text: "Acessórios",
-      isSelected: false,
     ),
     Categorys(
       id: "7",
       text: "Prençada",
-      isSelected: false,
     ),
     Categorys(
       id: "8",
       text: "Vibrantes",
-      isSelected: false,
     ),
   ];
 
