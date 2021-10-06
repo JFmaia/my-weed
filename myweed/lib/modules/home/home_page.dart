@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myweed/components/category/category.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
 class HomePage extends StatelessWidget {
@@ -97,10 +98,10 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(
-        child: Center(
-          child: Text("Home Page!"),
-        ),
+      body: Column(
+        children: [
+          Category(),
+        ],
       ),
     );
   }
