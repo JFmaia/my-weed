@@ -1,11 +1,10 @@
 class Categorys {
   final String id;
   final String text;
-  final bool isSelected;
-
-  const Categorys({
+  bool isSelected;
+  Categorys({
     required this.id,
     required this.text,
-    required this.isSelected,
+    this.isSelected = false,
   });
 }
