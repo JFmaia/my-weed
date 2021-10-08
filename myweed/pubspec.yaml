@@ -18,9 +18,7 @@ dependencies:
   mobx: ^2.0.4
   flutter_mobx: ^2.0.2
   google_fonts: ^2.1.0
-  custom_fade_animation: ^0.0.2
- 
-
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -39,6 +37,7 @@ flutter:
     - assets/images/google.png
     - assets/images/person.png
     - assets/images/marijuana.png
+    - assets/images/hibrida.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
