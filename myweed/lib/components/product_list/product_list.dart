@@ -80,11 +80,15 @@ class ProductList extends StatelessWidget {
                         ),
                       ],
                     ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.star_border,
-                        color: AppColors.secundary,
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        height: 28,
+                        width: 28,
+                        child: Icon(
+                          Icons.star_border,
+                          color: AppColors.secundary,
+                        ),
                       ),
                     ),
                   ],
