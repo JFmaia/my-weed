@@ -3,7 +3,11 @@ import 'package:myweed/components/icon_grams/icon_grams.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
 class ProductList extends StatelessWidget {
-  const ProductList({Key? key}) : super(key: key);
+  final String imageUrl;
+  const ProductList({
+    Key? key,
+    required this.imageUrl,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +36,7 @@ class ProductList extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         image: DecorationImage(
-                          image: AssetImage("assets/images/hibrida.jpg"),
+                          image: AssetImage(imageUrl),
                           fit: BoxFit.cover,
                         ),
                       ),
