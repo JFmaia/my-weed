@@ -34,51 +34,63 @@ class _HomePageState extends State<HomePage> {
       ][homeController.currentPage],
       bottomNavigationBar: Container(
         color: Colors.transparent,
-        height: 90,
+        height: 60,
         child: Observer(
           builder: (context) => Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              IconButton(
-                onPressed: () {
-                  homeController.setPage(0);
-                  setState(() {});
-                },
-                icon: Icon(
-                  homeController.currentPage == 0
-                      ? Icons.home
-                      : Icons.home_outlined,
+              Container(
+                width: 80,
+                child: IconButton(
+                  onPressed: () {
+                    homeController.setPage(0);
+                    setState(() {});
+                  },
+                  icon: Icon(
+                    homeController.currentPage == 0
+                        ? Icons.home
+                        : Icons.home_outlined,
+                  ),
                 ),
               ),
-              IconButton(
-                onPressed: () {
-                  homeController.setPage(1);
-                  setState(() {});
-                },
-                icon: Icon(
-                  Icons.search_rounded,
+              Container(
+                width: 80,
+                child: IconButton(
+                  onPressed: () {
+                    homeController.setPage(1);
+                    setState(() {});
+                  },
+                  icon: Icon(
+                    Icons.search_rounded,
+                  ),
                 ),
               ),
-              IconButton(
-                onPressed: () {
-                  homeController.setPage(2);
-                  setState(() {});
-                },
-                icon: Icon(
-                  homeController.currentPage == 2
-                      ? Icons.star
-                      : Icons.star_border_outlined,
+              Container(
+                width: 80,
+                child: IconButton(
+                  onPressed: () {
+                    homeController.setPage(2);
+                    setState(() {});
+                  },
+                  icon: Icon(
+                    homeController.currentPage == 2
+                        ? Icons.star
+                        : Icons.star_border_outlined,
+                  ),
                 ),
               ),
-              IconButton(
-                onPressed: () {
-                  homeController.setPage(3);
-                  setState(() {});
-                },
-                icon: Icon(
-                  homeController.currentPage == 3
-                      ? Icons.person
-                      : Icons.person_outline,
+              Container(
+                width: 80,
+                child: IconButton(
+                  onPressed: () {
+                    homeController.setPage(3);
+                    setState(() {});
+                  },
+                  icon: Icon(
+                    homeController.currentPage == 3
+                        ? Icons.person
+                        : Icons.person_outline,
+                  ),
                 ),
               ),
             ],
