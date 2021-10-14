@@ -1,3 +1,4 @@
+import 'package:animated_card/animated_card.dart';
 import 'package:flutter/material.dart';
 import 'package:myweed/components/button_login/button_login.dart';
 import 'package:myweed/components/container_login/container_login.dart';
@@ -17,10 +18,19 @@ class LoginPage extends StatelessWidget {
         child: InkWell(
           child: SingleChildScrollView(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 80, bottom: 20),
-                  child: Center(
+                  padding: const EdgeInsets.only(
+                    top: 80,
+                    bottom: 20,
+                    left: 70,
+                  ),
+                  child: AnimatedCard(
+                    direction: AnimatedCardDirection.top,
+                    initDelay: Duration(seconds: 1),
+                    duration: Duration(seconds: 1),
+                    curve: Curves.decelerate,
                     child: Container(
                       height: _media.height * 0.25,
                       width: _media.width * 0.50,
@@ -32,87 +42,123 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                ContainerLogin(),
+                AnimatedCard(
+                  direction: AnimatedCardDirection.right,
+                  initDelay: Duration(microseconds: 0),
+                  duration: Duration(seconds: 1),
+                  curve: Curves.decelerate,
+                  child: ContainerLogin(),
+                ),
                 SizedBox(height: 10),
                 Row(
                   children: [
-                    TextButton(
-                      child: Text(
-                        "Esqueceu sua senha?",
-                        style: TextStyle(
-                          color: Colors.white,
+                    AnimatedCard(
+                      direction: AnimatedCardDirection.right,
+                      initDelay: Duration(microseconds: 0),
+                      duration: Duration(seconds: 1),
+                      curve: Curves.decelerate,
+                      child: TextButton(
+                        child: Text(
+                          "Esqueceu sua senha?",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
+                        onPressed: () {},
                       ),
-                      onPressed: () {},
                     ),
                   ],
                 ),
                 SizedBox(height: 12),
-                ButtonLogin(
-                  text: "Entrar",
-                  corButton: AppColors.secundary,
-                  corText: Colors.white,
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => HomePage(),
-                      ),
-                    );
-                  },
+                AnimatedCard(
+                  direction: AnimatedCardDirection.right,
+                  initDelay: Duration(microseconds: 0),
+                  duration: Duration(seconds: 1),
+                  curve: Curves.decelerate,
+                  child: ButtonLogin(
+                    text: "Entrar",
+                    corButton: AppColors.secundary,
+                    corText: Colors.white,
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => HomePage(),
+                        ),
+                      );
+                    },
+                  ),
                 ),
                 SizedBox(height: 12),
-                ButtonLogin(
-                  text: "Cadastre-se",
-                  corButton: AppColors.grey,
-                  corText: AppColors.secundary,
-                  onPressed: () {},
+                AnimatedCard(
+                  direction: AnimatedCardDirection.right,
+                  initDelay: Duration(microseconds: 0),
+                  duration: Duration(seconds: 1),
+                  curve: Curves.decelerate,
+                  child: ButtonLogin(
+                    text: "Cadastre-se",
+                    corButton: AppColors.grey,
+                    corText: AppColors.secundary,
+                    onPressed: () {},
+                  ),
                 ),
                 SizedBox(height: 12),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MaterialButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      height: 50,
-                      minWidth: 135,
-                      color: AppColors.grey,
-                      child: Container(
-                        height: 30,
-                        width: 30,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.blueGrey,
-                          image: const DecorationImage(
-                            image: AssetImage("assets/images/facebook.png"),
-                            fit: BoxFit.cover,
+                    AnimatedCard(
+                      direction: AnimatedCardDirection.bottom,
+                      initDelay: Duration(microseconds: 0),
+                      duration: Duration(seconds: 1),
+                      curve: Curves.decelerate,
+                      child: MaterialButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        height: 50,
+                        minWidth: 135,
+                        color: AppColors.grey,
+                        child: Container(
+                          height: 30,
+                          width: 30,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.blueGrey,
+                            image: const DecorationImage(
+                              image: AssetImage("assets/images/facebook.png"),
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
+                        onPressed: () {},
                       ),
-                      onPressed: () {},
                     ),
-                    MaterialButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      height: 50,
-                      minWidth: 135,
-                      color: AppColors.grey,
-                      child: Container(
-                        height: 30,
-                        width: 30,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.blueGrey,
-                          image: const DecorationImage(
-                            image: AssetImage("assets/images/google.png"),
-                            fit: BoxFit.cover,
+                    AnimatedCard(
+                      direction: AnimatedCardDirection.bottom,
+                      initDelay: Duration(microseconds: 0),
+                      duration: Duration(seconds: 1),
+                      curve: Curves.decelerate,
+                      child: MaterialButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        height: 50,
+                        minWidth: 135,
+                        color: AppColors.grey,
+                        child: Container(
+                          height: 30,
+                          width: 30,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.blueGrey,
+                            image: const DecorationImage(
+                              image: AssetImage("assets/images/google.png"),
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
+                        onPressed: () {},
                       ),
-                      onPressed: () {},
                     ),
                   ],
                 ),
