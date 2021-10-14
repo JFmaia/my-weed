@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:myweed/components/container_bar/container_bar.dart';
 import 'package:myweed/modules/favorites/favorites_page.dart';
 import 'package:myweed/modules/home/home_controller.dart';
 import 'package:myweed/modules/home_page/page_home.dart';
@@ -19,10 +18,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
-        child: ContainerBar(),
-      ),
       body: [
         PageHome(
           key: UniqueKey(),
