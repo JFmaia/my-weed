@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:myweed/modules/login/login_controller.dart';
 import 'package:myweed/shared/theme/colors.dart';
+import 'package:provider/provider.dart';
 
 class ContainerLogin extends StatefulWidget {
   const ContainerLogin({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class ContainerLogin extends StatefulWidget {
 class _ContainerLoginState extends State<ContainerLogin> {
   @override
   Widget build(BuildContext context) {
-    final _controller = LoginController();
+    final _controller = Provider.of<LoginController>(context);
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
