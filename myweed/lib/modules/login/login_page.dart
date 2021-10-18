@@ -2,7 +2,6 @@ import 'package:animated_card/animated_card.dart';
 import 'package:flutter/material.dart';
 import 'package:myweed/components/button_login/button_login.dart';
 import 'package:myweed/components/container_login/container_login.dart';
-import 'package:myweed/modules/home/home_page.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
 class LoginPage extends StatelessWidget {
@@ -73,12 +72,7 @@ class LoginPage extends StatelessWidget {
                     corButton: AppColors.secundary,
                     corText: Colors.white,
                     onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => HomePage(),
-                        ),
-                      );
+                      Navigator.pushNamed(context, "/home");
                     },
                   ),
                 ),
@@ -90,7 +84,9 @@ class LoginPage extends StatelessWidget {
                     text: "Cadastre-se",
                     corButton: AppColors.grey,
                     corText: AppColors.secundary,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, "/registe");
+                    },
                   ),
                 ),
                 SizedBox(height: 12),
