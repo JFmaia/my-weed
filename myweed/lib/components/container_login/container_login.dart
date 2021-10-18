@@ -36,10 +36,20 @@ class _ContainerLoginState extends State<ContainerLogin> {
           Container(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             child: TextField(
+              obscureText: false,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: "Password",
                 hintStyle: TextStyle(color: Colors.white54),
+                suffix: AnimatedContainer(
+                  duration: Duration(
+                    microseconds: 300,
+                  ),
+                  child: IconButton(
+                    icon: Icon(Icons.visibility),
+                    onPressed: () {},
+                  ),
+                ),
               ),
             ),
           ),
