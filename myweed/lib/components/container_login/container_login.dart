@@ -41,14 +41,12 @@ class _ContainerLoginState extends State<ContainerLogin> {
                 border: InputBorder.none,
                 hintText: "Password",
                 hintStyle: TextStyle(color: Colors.white54),
-                suffix: AnimatedContainer(
-                  duration: Duration(
-                    microseconds: 300,
+                suffixIcon: GestureDetector(
+                  child: Icon(
+                    Icons.visibility,
+                    color: AppColors.secundary,
                   ),
-                  child: IconButton(
-                    icon: Icon(Icons.visibility),
-                    onPressed: () {},
-                  ),
+                  onTap: () {},
                 ),
               ),
             ),
