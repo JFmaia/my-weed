@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:myweed/modules/login/login_controller.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
 class ContainerLogin extends StatefulWidget {
@@ -11,6 +13,7 @@ class ContainerLogin extends StatefulWidget {
 class _ContainerLoginState extends State<ContainerLogin> {
   @override
   Widget build(BuildContext context) {
+    final _controller = LoginController();
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -35,18 +38,27 @@ class _ContainerLoginState extends State<ContainerLogin> {
           ),
           Container(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-            child: TextField(
-              obscureText: false,
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: "Password",
-                hintStyle: TextStyle(color: Colors.white54),
-                suffixIcon: GestureDetector(
-                  child: Icon(
-                    Icons.visibility,
-                    color: AppColors.secundary,
+            child: Observer(
+              builder: (context) => TextField(
+                obscureText: _controller.isVisible,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: "Password",
+                  hintStyle: TextStyle(color: Colors.white54),
+                  suffixIcon: GestureDetector(
+                    child: _controller.isVisible
+                        ? Icon(
+                            Icons.visibility_off,
+                            color: AppColors.secundary,
+                          )
+                        : Icon(
+                            Icons.visibility,
+                            color: AppColors.secundary,
+                          ),
+                    onTap: () {
+                      _controller.setVisible(!_controller.isVisible);
+                    },
                   ),
-                  onTap: () {},
                 ),
               ),
             ),
