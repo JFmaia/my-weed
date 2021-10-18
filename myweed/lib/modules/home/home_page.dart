@@ -5,6 +5,7 @@ import 'package:myweed/modules/home/home_controller.dart';
 import 'package:myweed/modules/home_page/page_home.dart';
 import 'package:myweed/modules/profile/profile_page.dart';
 import 'package:myweed/modules/search/search_page.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,9 +15,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final homeController = HomeController();
   @override
   Widget build(BuildContext context) {
+    final _homeController = Provider.of<HomeController>(context);
     return Scaffold(
       body: [
         PageHome(
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
         ProfilePage(
           key: UniqueKey(),
         ),
-      ][homeController.currentPage],
+      ][_homeController.currentPage],
       bottomNavigationBar: Container(
         color: Colors.transparent,
         height: 60,
@@ -43,11 +44,11 @@ class _HomePageState extends State<HomePage> {
                 width: 80,
                 child: IconButton(
                   onPressed: () {
-                    homeController.setPage(0);
+                    _homeController.setPage(0);
                     setState(() {});
                   },
                   icon: Icon(
-                    homeController.currentPage == 0
+                    _homeController.currentPage == 0
                         ? Icons.home
                         : Icons.home_outlined,
                   ),
@@ -57,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                 width: 80,
                 child: IconButton(
                   onPressed: () {
-                    homeController.setPage(1);
+                    _homeController.setPage(1);
                     setState(() {});
                   },
                   icon: Icon(
@@ -69,11 +70,11 @@ class _HomePageState extends State<HomePage> {
                 width: 80,
                 child: IconButton(
                   onPressed: () {
-                    homeController.setPage(2);
+                    _homeController.setPage(2);
                     setState(() {});
                   },
                   icon: Icon(
-                    homeController.currentPage == 2
+                    _homeController.currentPage == 2
                         ? Icons.star
                         : Icons.star_border_outlined,
                   ),
@@ -83,11 +84,11 @@ class _HomePageState extends State<HomePage> {
                 width: 80,
                 child: IconButton(
                   onPressed: () {
-                    homeController.setPage(3);
+                    _homeController.setPage(3);
                     setState(() {});
                   },
                   icon: Icon(
-                    homeController.currentPage == 3
+                    _homeController.currentPage == 3
                         ? Icons.person
                         : Icons.person_outline,
                   ),
