@@ -24,6 +24,7 @@ class _PageHomeState extends State<PageHome> {
         ),
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Container(
           child: Column(
             children: [
