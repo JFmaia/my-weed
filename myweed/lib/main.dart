@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myweed/modules/home/home_controller.dart';
+import 'package:myweed/modules/home/home_page.dart';
+import 'package:myweed/modules/login/login_page.dart';
+import 'package:myweed/modules/register/registe_page.dart';
 import 'package:myweed/modules/splash/splash_page.dart';
 import 'package:myweed/shared/theme/colors.dart';
 import 'package:provider/provider.dart';
@@ -29,7 +32,13 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: AppColors.primary,
           canvasColor: AppColors.secundary,
         ),
-        home: SplashPage(),
+        initialRoute: "/splash",
+        routes: {
+          "/splash": (context) => SplashPage(),
+          "/home": (context) => HomePage(),
+          "/login": (context) => LoginPage(),
+          "/registe": (context) => RegistePage(),
+        },
       ),
     );
   }
