@@ -14,8 +14,13 @@ class LoginPage extends StatelessWidget {
       backgroundColor: AppColors.primary,
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
-        child: InkWell(
+        child: SafeArea(
           child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(
+              parent: ScrollPhysics(
+                parent: NeverScrollableScrollPhysics(),
+              ),
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
