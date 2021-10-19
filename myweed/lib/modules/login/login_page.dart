@@ -32,7 +32,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   child: AnimatedCard(
                     direction: AnimatedCardDirection.top,
-                    initDelay: Duration(seconds: 2),
+                    initDelay: Duration(microseconds: 5),
                     curve: Curves.decelerate,
                     child: Container(
                       height: _media.height * 0.25,
@@ -47,7 +47,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 AnimatedCard(
                   direction: AnimatedCardDirection.right,
-                  initDelay: Duration(seconds: 1),
+                  initDelay: Duration(microseconds: 1),
                   child: ContainerLogin(),
                 ),
                 SizedBox(height: 10),
@@ -55,7 +55,7 @@ class LoginPage extends StatelessWidget {
                   children: [
                     AnimatedCard(
                       direction: AnimatedCardDirection.right,
-                      initDelay: Duration(seconds: 1),
+                      initDelay: Duration(microseconds: 1),
                       child: TextButton(
                         child: Text(
                           "Esqueceu sua senha?",
@@ -71,7 +71,7 @@ class LoginPage extends StatelessWidget {
                 SizedBox(height: 12),
                 AnimatedCard(
                   direction: AnimatedCardDirection.right,
-                  initDelay: Duration(seconds: 1),
+                  initDelay: Duration(microseconds: 1),
                   child: ButtonLogin(
                     text: "Entrar",
                     corButton: AppColors.secundary,
@@ -84,7 +84,7 @@ class LoginPage extends StatelessWidget {
                 SizedBox(height: 12),
                 AnimatedCard(
                   direction: AnimatedCardDirection.right,
-                  initDelay: Duration(seconds: 1),
+                  initDelay: Duration(microseconds: 1),
                   child: ButtonLogin(
                     text: "Cadastre-se",
                     corButton: AppColors.grey,
@@ -100,7 +100,7 @@ class LoginPage extends StatelessWidget {
                   children: [
                     AnimatedCard(
                       direction: AnimatedCardDirection.bottom,
-                      initDelay: Duration(seconds: 1),
+                      initDelay: Duration(microseconds: 1),
                       child: MaterialButton(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -125,7 +125,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     AnimatedCard(
                       direction: AnimatedCardDirection.bottom,
-                      initDelay: Duration(seconds: 1),
+                      initDelay: Duration(microseconds: 1),
                       child: MaterialButton(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
