@@ -62,6 +62,7 @@ class _PageHomeState extends State<PageHome> {
                       child: Container(
                         height: 180,
                         child: ListView.builder(
+                          physics: BouncingScrollPhysics(),
                           scrollDirection: Axis.horizontal,
                           itemCount: 5,
                           itemBuilder: (BuildContext ctx, int index) {
@@ -104,6 +105,7 @@ class _PageHomeState extends State<PageHome> {
                       child: Container(
                         height: 180,
                         child: ListView.builder(
+                          physics: BouncingScrollPhysics(),
                           scrollDirection: Axis.horizontal,
                           itemCount: 5,
                           itemBuilder: (BuildContext ctx, int index) {
