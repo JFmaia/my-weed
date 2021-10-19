@@ -19,6 +19,7 @@ class _PageHomeState extends State<PageHome> {
         preferredSize: Size.fromHeight(100),
         child: AnimatedCard(
           direction: AnimatedCardDirection.top,
+          duration: Duration(microseconds: 2),
           curve: Curves.decelerate,
           child: ContainerBar(),
         ),
@@ -29,7 +30,7 @@ class _PageHomeState extends State<PageHome> {
           child: Column(
             children: [
               AnimatedCard(
-                initDelay: Duration(seconds: 1),
+                initDelay: Duration(microseconds: 3),
                 child: Category(),
               ),
               SizedBox(
@@ -43,7 +44,7 @@ class _PageHomeState extends State<PageHome> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     AnimatedCard(
-                      initDelay: Duration(seconds: 1),
+                      initDelay: Duration(microseconds: 3),
                       child: Text(
                         "All Products",
                         style: TextStyle(
@@ -57,7 +58,7 @@ class _PageHomeState extends State<PageHome> {
                       height: 10,
                     ),
                     AnimatedCard(
-                      initDelay: Duration(seconds: 1),
+                      initDelay: Duration(microseconds: 3),
                       child: Container(
                         height: 180,
                         child: ListView.builder(
@@ -85,7 +86,7 @@ class _PageHomeState extends State<PageHome> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     AnimatedCard(
-                      initDelay: Duration(seconds: 1),
+                      initDelay: Duration(microseconds: 3),
                       child: Text(
                         "Products Rencet",
                         style: TextStyle(
@@ -99,7 +100,7 @@ class _PageHomeState extends State<PageHome> {
                       height: 10,
                     ),
                     AnimatedCard(
-                      initDelay: Duration(seconds: 1),
+                      initDelay: Duration(microseconds: 3),
                       child: Container(
                         height: 180,
                         child: ListView.builder(
