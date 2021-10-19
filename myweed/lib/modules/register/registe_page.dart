@@ -10,16 +10,6 @@ class RegistePage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: AppColors.primary,
-        centerTitle: true,
-        title: Container(
-          height: 30,
-          width: 30,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/logo.png"),
-            ),
-          ),
-        ),
         leading: BackButton(
           color: AppColors.secundary,
           onPressed: () {
