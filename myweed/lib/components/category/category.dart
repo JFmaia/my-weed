@@ -20,6 +20,7 @@ class _CategoryState extends State<Category> {
       padding: EdgeInsets.only(top: 6, left: 15),
       height: 45,
       child: ListView.builder(
+        physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: _list.length,
         itemBuilder: (BuildContext context, int index) {
