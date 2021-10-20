@@ -81,7 +81,7 @@ class PassawordPage extends StatelessWidget {
                   //Forma da caixa de texto e cor, depois de selecionada.
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.black),
+                    borderSide: BorderSide(color: AppColors.secundary),
                   ),
                   //Texto que fica antes da digitação.
                   hintText: "Senha",
