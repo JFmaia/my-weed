@@ -147,6 +147,20 @@ class PassawordPage extends StatelessWidget {
                   Text("Contém pelo menos 1 número"),
                 ],
               ),
+              SizedBox(height: 50),
+              MaterialButton(
+                height: 40,
+                minWidth: double.infinity,
+                onPressed: () {},
+                color: AppColors.secundary,
+                child: Text(
+                  "CRIAR CONTA",
+                  style: TextStyle(color: Colors.white),
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
             ],
           ),
         ),
