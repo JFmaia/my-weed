@@ -88,6 +88,65 @@ class PassawordPage extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
+              Row(
+                children: [
+                  AnimatedContainer(
+                    duration: Duration(milliseconds: 500),
+                    width: 20,
+                    height: 20,
+                    decoration: BoxDecoration(
+                      color: _controller.isPasswordCharacters
+                          ? Colors.green
+                          : Colors.transparent,
+                      border: _controller.isPasswordCharacters
+                          ? Border.all(color: Colors.transparent)
+                          : Border.all(color: Colors.grey.shade400),
+                      borderRadius: _controller.isPasswordCharacters
+                          ? BorderRadius.circular(10)
+                          : BorderRadius.circular(5),
+                    ),
+                    child: Center(
+                      child: Icon(
+                        Icons.check,
+                        color: Colors.white,
+                        size: 15,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Text("Contém pelo menos 8 caracteres"),
+                ],
+              ),
+              SizedBox(height: 10),
+              Row(
+                children: [
+                  AnimatedContainer(
+                    duration: Duration(milliseconds: 500),
+                    width: 20,
+                    height: 20,
+                    decoration: BoxDecoration(
+                      color: _controller.isPasswordNumber
+                          ? AppColors.secundary
+                          : Colors.transparent,
+                      border: _controller.isPasswordNumber
+                          ? Border.all(color: Colors.transparent)
+                          : Border.all(color: Colors.white),
+                      borderRadius: _controller.isPasswordNumber
+                          ? BorderRadius.circular(10)
+                          : BorderRadius.circular(5),
+                    ),
+                    child: Center(
+                      child: Icon(
+                        Icons.check,
+                        color: Colors.white,
+                        size: 15,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Text("Contém pelo menos 1 número"),
+                ],
+              ),
             ],
           ),
         ),
