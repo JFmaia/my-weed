@@ -42,6 +42,45 @@ class PassawordPage extends StatelessWidget {
                   fontSize: 16, height: 1.5, color: Colors.grey.shade600),
             ),
             SizedBox(height: 30),
+            TextField(
+              onChanged: (password) => _onPasswordChanged(password),
+              obscureText: !,
+              decoration: InputDecoration(
+                //Icone de visualizar a senha.
+                suffixIcon: IconButton(
+                  icon: _isVisible
+                      ? Icon(
+                          Icons.visibility,
+                          color: Colors.black,
+                        )
+                      : Icon(
+                          Icons.visibility_off,
+                          color: Colors.grey,
+                        ),
+                  //Mudando o estado do icone de visualização da senha.
+                  onPressed: () {
+                    setState(() {
+                      _isVisible = !_isVisible;
+                    });
+                  },
+                ),
+                //Forma da caixa de texto e cor.
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.black),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                //Forma da caixa de texto e cor, depois de selecionada.
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(color: Colors.black),
+                ),
+                //Texto que fica antes da digitação.
+                hintText: "Senha",
+                //Distancia dentro da caixa de entrada de texto.
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              ),
+            ),
           ],
         ),
       ),
