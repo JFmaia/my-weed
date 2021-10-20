@@ -96,11 +96,11 @@ class PassawordPage extends StatelessWidget {
                     height: 20,
                     decoration: BoxDecoration(
                       color: _controller.isPasswordCharacters
-                          ? Colors.green
+                          ? AppColors.secundary
                           : Colors.transparent,
                       border: _controller.isPasswordCharacters
                           ? Border.all(color: Colors.transparent)
-                          : Border.all(color: Colors.grey.shade400),
+                          : Border.all(color: Colors.white),
                       borderRadius: _controller.isPasswordCharacters
                           ? BorderRadius.circular(10)
                           : BorderRadius.circular(5),
