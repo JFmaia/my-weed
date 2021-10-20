@@ -27,7 +27,7 @@ class PassawordPage extends StatelessWidget {
             parent: NeverScrollableScrollPhysics(),
           ),
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
+        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 80),
         child: Observer(
           builder: (context) => Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,11 +111,13 @@ class PassawordPage extends StatelessWidget {
                           : BorderRadius.circular(5),
                     ),
                     child: Center(
-                      child: Icon(
-                        Icons.check,
-                        color: Colors.white,
-                        size: 15,
-                      ),
+                      child: _controller.isPasswordCharacters
+                          ? Icon(
+                              Icons.check,
+                              color: Colors.white,
+                              size: 15,
+                            )
+                          : null,
                     ),
                   ),
                   SizedBox(width: 10),
@@ -141,11 +143,13 @@ class PassawordPage extends StatelessWidget {
                           : BorderRadius.circular(5),
                     ),
                     child: Center(
-                      child: Icon(
-                        Icons.check,
-                        color: Colors.white,
-                        size: 15,
-                      ),
+                      child: _controller.isPasswordNumber
+                          ? Icon(
+                              Icons.check,
+                              color: Colors.white,
+                              size: 15,
+                            )
+                          : null,
                     ),
                   ),
                   SizedBox(width: 10),
