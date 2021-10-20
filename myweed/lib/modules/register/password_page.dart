@@ -154,7 +154,7 @@ class PassawordPage extends StatelessWidget {
                 onPressed: () {},
                 color: AppColors.secundary,
                 child: Text(
-                  "CRIAR CONTA",
+                  "Criar",
                   style: TextStyle(color: Colors.white),
                 ),
                 shape: RoundedRectangleBorder(
