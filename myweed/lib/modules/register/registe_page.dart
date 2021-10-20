@@ -134,7 +134,7 @@ class RegistePage extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.of(context).pushReplacementNamed("/register");
+                    Navigator.pushNamed(context, "/password");
                   },
                 ),
               ),
