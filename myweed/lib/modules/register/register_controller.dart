@@ -7,9 +7,9 @@ abstract class _RegisterController with Store {
   @observable
   bool isVisible = true;
   @observable
-  bool isPasswordCharacters = false;
+  bool isPasswordCharacters = true;
   @observable
-  bool isPasswordNumber = false;
+  bool isPasswordNumber = true;
 
   @action
   void setVisible(bool i) {
