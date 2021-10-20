@@ -21,7 +21,12 @@ class PassawordPage extends StatelessWidget {
           },
         ),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(
+          parent: ScrollPhysics(
+            parent: NeverScrollableScrollPhysics(),
+          ),
+        ),
         padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
         child: Observer(
           builder: (context) => Column(
