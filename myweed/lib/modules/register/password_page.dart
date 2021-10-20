@@ -58,20 +58,20 @@ class PassawordPage extends StatelessWidget {
                 obscureText: !_controller.isVisible,
                 decoration: InputDecoration(
                   //Icone de visualizar a senha.
-                  suffixIcon: IconButton(
-                    icon: _controller.isVisible
+                  suffixIcon: GestureDetector(
+                    child: _controller.isVisible
                         ? Icon(
                             Icons.visibility,
-                            color: Colors.black,
+                            color: AppColors.secundary,
                           )
                         : Icon(
                             Icons.visibility_off,
-                            color: Colors.grey,
+                            color: AppColors.secundary,
                           ),
-                    //Mudando o estado do icone de visualização da senha.
-                    onPressed: () {
+                    onTap: () {
                       _controller.isVisible = !_controller.isVisible;
                     },
+                    //Mudando o estado do icone de visualização da senha.
                   ),
                   //Forma da caixa de texto e cor.
                   border: OutlineInputBorder(
