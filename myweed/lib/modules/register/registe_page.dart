@@ -117,16 +117,6 @@ class RegistePage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              // MaterialButton(
-              //   color: AppColors.secundary,
-              //   child: Text(
-              //     "Avançar",
-              //     style: TextStyle(
-              //       color: Colors.white,
-              //     ),
-              //   ),
-              //   onPressed: () {},
-              // ),
               Padding(
                 padding: const EdgeInsets.only(
                   right: 15,
@@ -143,7 +133,9 @@ class RegistePage extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed("/register");
+                  },
                 ),
               ),
             ],
