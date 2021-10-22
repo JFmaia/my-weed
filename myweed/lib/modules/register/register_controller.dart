@@ -20,8 +20,10 @@ abstract class _RegisterController with Store {
   void onPasswordChanged(String password) {
     final numericRegex = RegExp(r'[0-9]');
 
+    isPasswordCharacters = false;
     if (password.length >= 8) isPasswordCharacters = true;
 
+    isPasswordNumber = false;
     if (numericRegex.hasMatch(password)) isPasswordNumber = true;
   }
 }
