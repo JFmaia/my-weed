@@ -7,9 +7,9 @@ abstract class _RegisterController with Store {
   @observable
   bool isVisible = true;
   @observable
-  bool isPasswordCharacters = true;
+  bool isPasswordCharacters = false;
   @observable
-  bool isPasswordNumber = true;
+  bool isPasswordNumber = false;
 
   @action
   void setVisible(bool i) {
@@ -20,10 +20,8 @@ abstract class _RegisterController with Store {
   void onPasswordChanged(String password) {
     final numericRegex = RegExp(r'[0-9]');
 
-    isPasswordCharacters = false;
     if (password.length >= 8) isPasswordCharacters = true;
 
-    isPasswordNumber = false;
     if (numericRegex.hasMatch(password)) isPasswordNumber = true;
   }
 }
