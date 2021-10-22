@@ -5,7 +5,7 @@ class RegisterController = _RegisterController with _$RegisterController;
 
 abstract class _RegisterController with Store {
   @observable
-  bool isVisible = true;
+  bool isVisible = false;
   @observable
   bool isPasswordCharacters = false;
   @observable
