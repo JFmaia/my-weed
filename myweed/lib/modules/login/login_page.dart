@@ -77,7 +77,7 @@ class LoginPage extends StatelessWidget {
                     corButton: AppColors.secundary,
                     corText: Colors.white,
                     onPressed: () {
-                      Navigator.pushNamed(context, "/home");
+                      Navigator.pushReplacementNamed(context, "/home");
                     },
                   ),
                 ),
