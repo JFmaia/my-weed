@@ -154,7 +154,7 @@ class PassawordPage extends StatelessWidget {
               ),
               SizedBox(height: 50),
               MaterialButton(
-                height: 40,
+                height: 50,
                 minWidth: double.infinity,
                 onPressed: () {},
                 color: AppColors.secundary,
