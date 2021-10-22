@@ -106,36 +106,22 @@ class RegistePage extends StatelessWidget {
                   ],
                 ),
               ),
-            ],
-          ),
-        ),
-      ),
-      bottomNavigationBar: SafeArea(
-        child: Container(
-          height: 50,
-          color: Colors.transparent,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(
-                  right: 15,
+              SizedBox(
+                height: 60,
+              ),
+              MaterialButton(
+                height: 50,
+                minWidth: double.infinity,
+                onPressed: () {
+                  Navigator.pushNamed(context, "/password");
+                },
+                color: AppColors.secundary,
+                child: Text(
+                  "Avançar",
+                  style: TextStyle(color: Colors.white),
                 ),
-                child: MaterialButton(
-                  height: 40,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  color: AppColors.secundary,
-                  child: Text(
-                    "Avançar",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.pushNamed(context, "/password");
-                  },
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
                 ),
               ),
             ],
