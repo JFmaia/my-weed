@@ -71,11 +71,11 @@ class PassawordPage extends StatelessWidget {
                       suffixIcon: GestureDetector(
                         child: _controller.isVisible
                             ? Icon(
-                                Icons.visibility_off,
+                                Icons.visibility,
                                 color: AppColors.secundary,
                               )
                             : Icon(
-                                Icons.visibility,
+                                Icons.visibility_off,
                                 color: AppColors.secundary,
                               ),
                         onTap: () {
