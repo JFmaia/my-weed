@@ -52,42 +52,38 @@ class PassawordPage extends StatelessWidget {
                     fontSize: 16, height: 1.5, color: Colors.grey.shade600),
               ),
               SizedBox(height: 30),
-              TextField(
-                onChanged: (password) =>
-                    _controller.onPasswordChanged(password),
-                obscureText: !_controller.isVisible,
-                decoration: InputDecoration(
-                  //Icone de visualizar a senha.
-                  suffixIcon: GestureDetector(
-                    child: _controller.isVisible
-                        ? Icon(
-                            Icons.visibility,
-                            color: AppColors.secundary,
-                          )
-                        : Icon(
-                            Icons.visibility_off,
-                            color: AppColors.secundary,
-                          ),
-                    onTap: () {
-                      _controller.isVisible = !_controller.isVisible;
-                    },
-                    //Mudando o estado do icone de visualização da senha.
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: AppColors.grey,
+                ),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                child: Observer(
+                  builder: (context) => TextField(
+                    onChanged: (password) =>
+                        _controller.onPasswordChanged(password),
+                    obscureText: !_controller.isVisible,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: "Password",
+                      hintStyle: TextStyle(color: Colors.white54),
+                      suffixIcon: GestureDetector(
+                        child: _controller.isVisible
+                            ? Icon(
+                                Icons.visibility_off,
+                                color: AppColors.secundary,
+                              )
+                            : Icon(
+                                Icons.visibility,
+                                color: AppColors.secundary,
+                              ),
+                        onTap: () {
+                          _controller.setVisible(!_controller.isVisible);
+                        },
+                      ),
+                    ),
                   ),
-                  //Forma da caixa de texto e cor.
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  //Forma da caixa de texto e cor, depois de selecionada.
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: AppColors.secundary),
-                  ),
-                  //Texto que fica antes da digitação.
-                  hintText: "Senha",
-                  //Distancia dentro da caixa de entrada de texto.
-                  contentPadding:
-                      EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                 ),
               ),
               SizedBox(
