@@ -152,7 +152,7 @@ class PassawordPage extends StatelessWidget {
                   Text("Contém pelo menos 1 número"),
                 ],
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 60),
               MaterialButton(
                 height: 50,
                 minWidth: double.infinity,
