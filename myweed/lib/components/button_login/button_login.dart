@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Button personalizado
 class ButtonPerson extends StatefulWidget {
   final String text;
   final Color corButton;
