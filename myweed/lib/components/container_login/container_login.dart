@@ -4,6 +4,7 @@ import 'package:myweed/modules/login/login_controller.dart';
 import 'package:myweed/shared/theme/colors.dart';
 import 'package:provider/provider.dart';
 
+//Caixa de entrada de texto do Textfield personalizada.
 class ContainerLogin extends StatefulWidget {
   const ContainerLogin({Key? key}) : super(key: key);
 
