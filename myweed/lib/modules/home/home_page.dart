@@ -7,6 +7,10 @@ import 'package:myweed/modules/profile/profile_page.dart';
 import 'package:myweed/modules/search/search_page.dart';
 import 'package:provider/provider.dart';
 
+/*Essa page nada mais é que o inicio de todas a outras paginas, na Home será escolhido qual pagina será
+mostrada na tela.
+*/
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
+//Pagina de registro, onde os primeiros dados do usuário são cadastrados.
 class RegistePage extends StatelessWidget {
   const RegistePage({Key? key}) : super(key: key);
 

@@ -2,6 +2,7 @@ import 'package:myweed/service/home/home_service.dart';
 import 'package:myweed/shared/models/categorys.dart';
 
 class HomeMockService implements HomeService {
+  //Lista exemplo de categorias.
   static final List<Categorys> _list = [
     Categorys(
       id: "1",

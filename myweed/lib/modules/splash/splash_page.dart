@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
+//Splash do app.
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
 

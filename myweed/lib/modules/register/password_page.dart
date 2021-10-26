@@ -4,6 +4,7 @@ import 'package:myweed/modules/register/register_controller.dart';
 import 'package:myweed/shared/theme/colors.dart';
 import 'package:provider/provider.dart';
 
+//Pagina da validação da senha que estar sendo criada.
 class PassawordPage extends StatelessWidget {
   const PassawordPage({Key? key}) : super(key: key);
 
