@@ -72,7 +72,7 @@ class LoginPage extends StatelessWidget {
                 AnimatedCard(
                   direction: AnimatedCardDirection.right,
                   initDelay: Duration(microseconds: 1),
-                  child: ButtonLogin(
+                  child: ButtonPerson(
                     text: "Entrar",
                     corButton: AppColors.secundary,
                     corText: Colors.white,
@@ -85,7 +85,7 @@ class LoginPage extends StatelessWidget {
                 AnimatedCard(
                   direction: AnimatedCardDirection.right,
                   initDelay: Duration(microseconds: 1),
-                  child: ButtonLogin(
+                  child: ButtonPerson(
                     text: "Cadastre-se",
                     corButton: AppColors.grey,
                     corText: AppColors.secundary,
