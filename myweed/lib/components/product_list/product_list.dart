@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myweed/components/icon_grams/icon_grams.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
+//Este é o layout do produto na lista, como ele irá aparecer, mostrando image, nome valor.
 class ProductList extends StatelessWidget {
   final String imageUrl;
   const ProductList({
