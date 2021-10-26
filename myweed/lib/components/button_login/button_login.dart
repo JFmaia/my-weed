@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ButtonLogin extends StatefulWidget {
+class ButtonPerson extends StatefulWidget {
   final String text;
   final Color corButton;
   final Color corText;
   final Function()? onPressed;
-  const ButtonLogin({
+  const ButtonPerson({
     Key? key,
     required this.text,
     required this.corButton,
@@ -14,10 +14,10 @@ class ButtonLogin extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _ButtonLoginState createState() => _ButtonLoginState();
+  _ButtonPersonState createState() => _ButtonPersonState();
 }
 
-class _ButtonLoginState extends State<ButtonLogin> {
+class _ButtonPersonState extends State<ButtonPerson> {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
