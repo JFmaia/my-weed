@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myweed/service/home/home_service.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
+//Componete de categorias, onde o usuario vai clicar e filtrar os produtos na tela.
 class Category extends StatefulWidget {
   const Category({
     Key? key,
@@ -12,6 +13,7 @@ class Category extends StatefulWidget {
 }
 
 class _CategoryState extends State<Category> {
+  //Lista feita só para expor.
   final _list = HomeService().listCategorys();
 
   @override
