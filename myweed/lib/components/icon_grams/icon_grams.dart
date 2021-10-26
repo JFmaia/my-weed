@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
+//IconGrams é o icone da quantidade de gramas do produto.
 class IconGrams extends StatelessWidget {
   final int quanty;
 
