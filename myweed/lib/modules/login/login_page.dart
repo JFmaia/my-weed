@@ -96,60 +96,26 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 12),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    AnimatedCard(
-                      direction: AnimatedCardDirection.bottom,
-                      initDelay: Duration(microseconds: 1),
-                      child: MaterialButton(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        height: 50,
-                        minWidth: 135,
-                        color: AppColors.grey,
-                        child: Container(
-                          height: 30,
-                          width: 30,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.blueGrey,
-                            image: const DecorationImage(
-                              image: AssetImage("assets/images/facebook.png"),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        onPressed: () {},
+                AnimatedCard(
+                  direction: AnimatedCardDirection.bottom,
+                  initDelay: Duration(microseconds: 1),
+                  child: MaterialButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    height: 50,
+                    minWidth: double.infinity,
+                    color: AppColors.grey,
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      child: Image(
+                        image: AssetImage("assets/images/google.png"),
+                        fit: BoxFit.cover,
                       ),
                     ),
-                    AnimatedCard(
-                      direction: AnimatedCardDirection.bottom,
-                      initDelay: Duration(microseconds: 1),
-                      child: MaterialButton(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        height: 50,
-                        minWidth: 135,
-                        color: AppColors.grey,
-                        child: Container(
-                          height: 30,
-                          width: 30,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.blueGrey,
-                            image: const DecorationImage(
-                              image: AssetImage("assets/images/google.png"),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        onPressed: () {},
-                      ),
-                    ),
-                  ],
+                    onPressed: () {},
+                  ),
                 ),
               ],
             ),
