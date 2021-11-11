@@ -98,6 +98,41 @@ class _RegisterImageState extends State<RegisterImage> {
                   color: AppColors.secundary,
                 ),
               ),
+              SizedBox(height: 60),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  MaterialButton(
+                    height: _media.height * 0.06,
+                    minWidth: _media.width * 0.30,
+                    color: AppColors.primary,
+                    child: Text(
+                      "Pular",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      side: BorderSide(
+                        color: Colors.white,
+                      ),
+                    ),
+                    onPressed: () {},
+                  ),
+                  MaterialButton(
+                    height: _media.height * 0.06,
+                    minWidth: _media.width * 0.30,
+                    color: AppColors.secundary,
+                    child: Text(
+                      "Avançar",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    onPressed: () {},
+                  )
+                ],
+              ),
             ],
           ),
         ),
