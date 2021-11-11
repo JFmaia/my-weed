@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
 class RegisterImage extends StatefulWidget {
@@ -30,26 +29,49 @@ class _RegisterImageState extends State<RegisterImage> {
             parent: NeverScrollableScrollPhysics(),
           ),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Observer(
-              builder: (context) => Stack(
-                children: [
-                  Container(
-                    height: _media.height * 0.20,
-                    width: _media.width * 0.20,
-                    decoration: BoxDecoration(
-                      color: AppColors.grey,
-                      borderRadius: BorderRadius.circular(
-                        20,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 20,
+            horizontal: 20,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(
+                child: Stack(
+                  children: [
+                    Container(
+                      height: _media.height * 0.30,
+                      width: _media.width * 0.60,
+                      decoration: BoxDecoration(
+                        color: AppColors.grey,
+                        borderRadius: BorderRadius.circular(
+                          200,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                    Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: MaterialButton(
+                        height: _media.height * 0.08,
+                        minWidth: _media.width * 0.10,
+                        color: AppColors.secundary,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(60),
+                        ),
+                        child: Icon(
+                          Icons.photo_camera,
+                          color: AppColors.grey,
+                        ),
+                        onPressed: () {},
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );
