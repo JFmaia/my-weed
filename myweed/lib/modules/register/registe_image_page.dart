@@ -116,7 +116,9 @@ class _RegisterImageState extends State<RegisterImage> {
                         color: Colors.white,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, "/home");
+                    },
                   ),
                   MaterialButton(
                     height: _media.height * 0.06,
@@ -129,7 +131,9 @@ class _RegisterImageState extends State<RegisterImage> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, "/home");
+                    },
                   )
                 ],
               ),
