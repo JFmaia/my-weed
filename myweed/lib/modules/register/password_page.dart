@@ -157,7 +157,9 @@ class PassawordPage extends StatelessWidget {
               MaterialButton(
                 height: 50,
                 minWidth: double.infinity,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, "/registe_image");
+                },
                 color: AppColors.secundary,
                 child: Text(
                   "Criar",
