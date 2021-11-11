@@ -31,12 +31,30 @@ class _RegisterImageState extends State<RegisterImage> {
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            vertical: 20,
+            vertical: 60,
             horizontal: 20,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Center(
+                child: Text(
+                  "Escolha uma foto!",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+              Text(
+                "Por favor, escolha uma foto para o seu perfil, essa foto será seu rosto no My Weed.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 16, height: 1.5, color: Colors.grey.shade600),
+              ),
+              SizedBox(height: 30),
               Center(
                 child: Stack(
                   children: [
@@ -68,6 +86,16 @@ class _RegisterImageState extends State<RegisterImage> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              SizedBox(height: 30),
+              Text(
+                "Para escolher a imagem, basta aperta no botão de câmera!",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16,
+                  height: 1.5,
+                  color: AppColors.secundary,
                 ),
               ),
             ],
