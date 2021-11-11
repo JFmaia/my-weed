@@ -25,7 +25,7 @@ class RegistePage extends StatelessWidget {
               parent: NeverScrollableScrollPhysics(),
             ),
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 80),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 60),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
