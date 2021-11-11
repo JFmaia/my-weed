@@ -37,9 +37,9 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: AppColors.primary,
           canvasColor: AppColors.secundary,
         ),
-        initialRoute: "/splash",
+        initialRoute: "/",
         routes: {
-          "/splash": (context) => SplashPage(),
+          "/": (context) => SplashPage(),
           "/home": (context) => HomePage(),
           "/login": (context) => LoginPage(),
           "/registe": (context) => RegistePage(),
