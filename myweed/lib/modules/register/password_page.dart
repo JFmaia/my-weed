@@ -18,7 +18,7 @@ class PassawordPage extends StatelessWidget {
         leading: BackButton(
           color: AppColors.secundary,
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.of(context).pushReplacementNamed("/registe");
           },
         ),
       ),
@@ -158,7 +158,7 @@ class PassawordPage extends StatelessWidget {
                 height: 50,
                 minWidth: double.infinity,
                 onPressed: () {
-                  Navigator.pushNamed(context, "/registe_image");
+                  Navigator.of(context).pushReplacementNamed("/registe_image");
                 },
                 color: AppColors.secundary,
                 child: Text(

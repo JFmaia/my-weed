@@ -19,7 +19,7 @@ class _RegisterImageState extends State<RegisterImage> {
         leading: BackButton(
           color: AppColors.secundary,
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.of(context).pushReplacementNamed("/password");
           },
         ),
       ),
@@ -117,7 +117,7 @@ class _RegisterImageState extends State<RegisterImage> {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, "/home");
+                      Navigator.of(context).pushReplacementNamed("/home");
                     },
                   ),
                   MaterialButton(
@@ -132,7 +132,7 @@ class _RegisterImageState extends State<RegisterImage> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, "/home");
+                      Navigator.of(context).pushReplacementNamed("/home");
                     },
                   )
                 ],

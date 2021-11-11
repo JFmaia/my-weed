@@ -78,7 +78,7 @@ class LoginPage extends StatelessWidget {
                     corButton: AppColors.secundary,
                     corText: Colors.white,
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, "/home");
+                      Navigator.of(context).pushReplacementNamed("/home");
                     },
                   ),
                 ),
@@ -91,7 +91,7 @@ class LoginPage extends StatelessWidget {
                     corButton: AppColors.grey,
                     corText: AppColors.secundary,
                     onPressed: () {
-                      Navigator.pushNamed(context, "/registe");
+                      Navigator.of(context).pushReplacementNamed("/registe");
                     },
                   ),
                 ),

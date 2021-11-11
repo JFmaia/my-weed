@@ -14,7 +14,7 @@ class RegistePage extends StatelessWidget {
         leading: BackButton(
           color: AppColors.secundary,
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.of(context).pushReplacementNamed("/login");
           },
         ),
       ),
@@ -114,7 +114,7 @@ class RegistePage extends StatelessWidget {
                 height: 50,
                 minWidth: double.infinity,
                 onPressed: () {
-                  Navigator.pushNamed(context, "/password");
+                  Navigator.of(context).pushReplacementNamed("/password");
                 },
                 color: AppColors.secundary,
                 child: Text(
