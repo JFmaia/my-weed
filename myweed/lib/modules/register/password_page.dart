@@ -28,7 +28,7 @@ class PassawordPage extends StatelessWidget {
             parent: NeverScrollableScrollPhysics(),
           ),
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 80),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 60),
         child: Observer(
           builder: (context) => Column(
             crossAxisAlignment: CrossAxisAlignment.start,
