@@ -4,5 +4,5 @@
 
 ## Status: Em desenvolvimento.
 
-## Obs: Esse projeto não tem visão atual de ser colocado em loja, visando as leis do nosso pais. :3 
+## Obs: Esse projeto não tem visão atual de ser colocado em loja, é um simples projeto de aprendizado e pratica.
 
