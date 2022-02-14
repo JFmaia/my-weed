@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+
 import 'package:myweed/modules/favorites/favorites_page.dart';
 import 'package:myweed/modules/home/home_controller.dart';
 import 'package:myweed/modules/home_page/page_home.dart';
@@ -39,16 +40,15 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: Container(
         color: Colors.transparent,
         height: 60,
-        child: Observer(
-          builder: (context) => Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                width: 80,
-                child: IconButton(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              width: 80,
+              child: Observer(
+                builder: (context) => IconButton(
                   onPressed: () {
                     _homeController.setPage(0);
-                    setState(() {});
                   },
                   icon: Icon(
                     _homeController.currentPage == 0
@@ -57,24 +57,26 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              Container(
-                width: 80,
-                child: IconButton(
+            ),
+            Container(
+              width: 80,
+              child: Observer(
+                builder: (context) => IconButton(
                   onPressed: () {
                     _homeController.setPage(1);
-                    setState(() {});
                   },
                   icon: Icon(
                     Icons.search_rounded,
                   ),
                 ),
               ),
-              Container(
-                width: 80,
-                child: IconButton(
+            ),
+            Container(
+              width: 80,
+              child: Observer(
+                builder: (context) => IconButton(
                   onPressed: () {
                     _homeController.setPage(2);
-                    setState(() {});
                   },
                   icon: Icon(
                     _homeController.currentPage == 2
@@ -83,12 +85,13 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              Container(
-                width: 80,
-                child: IconButton(
+            ),
+            Container(
+              width: 80,
+              child: Observer(
+                builder: (context) => IconButton(
                   onPressed: () {
                     _homeController.setPage(3);
-                    setState(() {});
                   },
                   icon: Icon(
                     _homeController.currentPage == 3
@@ -97,8 +100,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
