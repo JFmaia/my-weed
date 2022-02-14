@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: AppColors.primary,
-        canvasColor: AppColors.secundary,
       ),
       initialRoute: "/",
       routes: {
