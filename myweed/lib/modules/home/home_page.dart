@@ -5,7 +5,6 @@ import 'package:myweed/modules/home/home_controller.dart';
 import 'package:myweed/modules/home_page/page_home.dart';
 import 'package:myweed/modules/profile/profile_page.dart';
 import 'package:myweed/modules/search/search_page.dart';
-import 'package:provider/provider.dart';
 
 /*Essa page nada mais é que o inicio de todas a outras paginas, na Home será escolhido qual pagina será
 mostrada na tela.
@@ -21,7 +20,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final _homeController = Provider.of<HomeController>(context);
+    final _homeController = HomeController();
     return Scaffold(
       body: [
         PageHome(

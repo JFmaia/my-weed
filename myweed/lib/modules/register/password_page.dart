@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:myweed/modules/register/register_controller.dart';
 import 'package:myweed/shared/theme/colors.dart';
-import 'package:provider/provider.dart';
 
 //Pagina da validação da senha que estar sendo criada.
 class PassawordPage extends StatelessWidget {
@@ -10,7 +9,7 @@ class PassawordPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _controller = Provider.of<RegisterController>(context);
+    final _controller = RegisterController();
     return Scaffold(
       appBar: AppBar(
         elevation: 0,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:myweed/modules/login/login_controller.dart';
 import 'package:myweed/shared/theme/colors.dart';
-import 'package:provider/provider.dart';
 
 //Caixa de entrada de texto do Textfield personalizada.
 class ContainerLogin extends StatefulWidget {
@@ -15,7 +14,7 @@ class ContainerLogin extends StatefulWidget {
 class _ContainerLoginState extends State<ContainerLogin> {
   @override
   Widget build(BuildContext context) {
-    final _controller = Provider.of<LoginController>(context);
+    final _controller = LoginController();
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
