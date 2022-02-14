@@ -12,7 +12,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^1.0.2
   mobx: ^2.0.4
   flutter_mobx: ^2.0.2
