@@ -22,31 +22,31 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final _homeController = HomeController();
-    return Scaffold(
-      body: [
-        PageHome(
-          key: UniqueKey(),
-        ),
-        SearchPage(
-          key: UniqueKey(),
-        ),
-        FavoritesPage(
-          key: UniqueKey(),
-        ),
-        ProfilePage(
-          key: UniqueKey(),
-        ),
-      ][_homeController.currentPage],
-      bottomNavigationBar: Container(
-        color: Colors.transparent,
-        height: 60,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Container(
-              width: 80,
-              child: Observer(
-                builder: (context) => IconButton(
+    return Observer(
+      builder: (context) => Scaffold(
+        body: [
+          PageHome(
+            key: UniqueKey(),
+          ),
+          SearchPage(
+            key: UniqueKey(),
+          ),
+          FavoritesPage(
+            key: UniqueKey(),
+          ),
+          ProfilePage(
+            key: UniqueKey(),
+          ),
+        ][_homeController.currentPage],
+        bottomNavigationBar: Container(
+          color: Colors.transparent,
+          height: 60,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                width: 80,
+                child: IconButton(
                   onPressed: () {
                     _homeController.setPage(0);
                   },
@@ -57,11 +57,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-            ),
-            Container(
-              width: 80,
-              child: Observer(
-                builder: (context) => IconButton(
+              Container(
+                width: 80,
+                child: IconButton(
                   onPressed: () {
                     _homeController.setPage(1);
                   },
@@ -70,11 +68,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-            ),
-            Container(
-              width: 80,
-              child: Observer(
-                builder: (context) => IconButton(
+              Container(
+                width: 80,
+                child: IconButton(
                   onPressed: () {
                     _homeController.setPage(2);
                   },
@@ -85,11 +81,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-            ),
-            Container(
-              width: 80,
-              child: Observer(
-                builder: (context) => IconButton(
+              Container(
+                width: 80,
+                child: IconButton(
                   onPressed: () {
                     _homeController.setPage(3);
                   },
@@ -100,8 +94,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
