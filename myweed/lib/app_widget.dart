@@ -16,7 +16,7 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: AppColors.primary,
       ),
-      initialRoute: "/splash",
+      initialRoute: "/",
       routes: {
         "/splash": (context) => SplashPage(),
         "/home": (context) => HomePage(),
