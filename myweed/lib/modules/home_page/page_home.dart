@@ -17,112 +17,114 @@ class PageHome extends StatefulWidget {
 class _PageHomeState extends State<PageHome> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
-        child: AnimatedCard(
-          direction: AnimatedCardDirection.top,
-          duration: Duration(microseconds: 2),
-          curve: Curves.decelerate,
-          child: ContainerBar(),
+    return SafeArea(
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(80),
+          child: AnimatedCard(
+            direction: AnimatedCardDirection.top,
+            duration: Duration(microseconds: 2),
+            curve: Curves.decelerate,
+            child: ContainerBar(),
+          ),
         ),
-      ),
-      body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Container(
-          child: Column(
-            children: [
-              AnimatedCard(
-                initDelay: Duration(microseconds: 3),
-                child: Category(),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 15,
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Container(
+            child: Column(
+              children: [
+                AnimatedCard(
+                  initDelay: Duration(microseconds: 3),
+                  child: Category(),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    AnimatedCard(
-                      initDelay: Duration(microseconds: 3),
-                      child: Text(
-                        "All Products",
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 15,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AnimatedCard(
+                        initDelay: Duration(microseconds: 3),
+                        child: Text(
+                          "All Products",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    AnimatedCard(
-                      initDelay: Duration(microseconds: 3),
-                      child: Container(
-                        height: 180,
-                        child: ListView.builder(
-                          physics: BouncingScrollPhysics(),
-                          scrollDirection: Axis.horizontal,
-                          itemCount: 5,
-                          itemBuilder: (BuildContext ctx, int index) {
-                            return ProductList(
-                              imageUrl: "assets/images/hibrida.jpg",
-                            );
-                          },
+                      SizedBox(
+                        height: 10,
+                      ),
+                      AnimatedCard(
+                        initDelay: Duration(microseconds: 3),
+                        child: Container(
+                          height: 180,
+                          child: ListView.builder(
+                            physics: BouncingScrollPhysics(),
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 5,
+                            itemBuilder: (BuildContext ctx, int index) {
+                              return ProductList(
+                                imageUrl: "assets/images/hibrida.jpg",
+                              );
+                            },
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 15,
+                SizedBox(
+                  height: 20,
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    AnimatedCard(
-                      initDelay: Duration(microseconds: 3),
-                      child: Text(
-                        "Products Rencet",
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 15,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AnimatedCard(
+                        initDelay: Duration(microseconds: 3),
+                        child: Text(
+                          "Products Rencet",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    AnimatedCard(
-                      initDelay: Duration(microseconds: 3),
-                      child: Container(
-                        height: 180,
-                        child: ListView.builder(
-                          physics: BouncingScrollPhysics(),
-                          scrollDirection: Axis.horizontal,
-                          itemCount: 5,
-                          itemBuilder: (BuildContext ctx, int index) {
-                            return ProductList(
-                              imageUrl: "assets/images/sativa.jpg",
-                            );
-                          },
+                      SizedBox(
+                        height: 10,
+                      ),
+                      AnimatedCard(
+                        initDelay: Duration(microseconds: 3),
+                        child: Container(
+                          height: 180,
+                          child: ListView.builder(
+                            physics: BouncingScrollPhysics(),
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 5,
+                            itemBuilder: (BuildContext ctx, int index) {
+                              return ProductList(
+                                imageUrl: "assets/images/sativa.jpg",
+                              );
+                            },
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
