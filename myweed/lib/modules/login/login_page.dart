@@ -1,7 +1,7 @@
 import 'package:animated_card/animated_card.dart';
 import 'package:flutter/material.dart';
-import 'package:myweed/components/button_login/button_login.dart';
-import 'package:myweed/components/container_login/container_login.dart';
+import 'package:myweed/shared/components/button_login/button_login.dart';
+import 'package:myweed/shared/components/container_login/container_login.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
 /* Pagina de login, por onde é feita a autenticação de usuário, por email e senha ou google.*/

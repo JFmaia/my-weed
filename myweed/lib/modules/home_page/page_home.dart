@@ -1,8 +1,9 @@
 import 'package:animated_card/animated_card.dart';
+
 import 'package:flutter/material.dart';
-import 'package:myweed/components/category/category.dart';
-import 'package:myweed/components/container_bar/container_bar.dart';
-import 'package:myweed/components/product_list/product_list.dart';
+import 'package:myweed/shared/components/category/category.dart';
+import 'package:myweed/shared/components/container_bar/container_bar.dart';
+import 'package:myweed/shared/components/product_list/product_list.dart';
 
 /* A home_page é a pagina que mostra os produtos mais vendidos, acessorios, os
 comprados recentemente, além dos produtos filtrados pelo usuário. */
