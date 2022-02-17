@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myweed/service/home/home_service.dart';
 import 'package:myweed/shared/theme/colors.dart';
+import '../../service/home/home_service.dart';
 
 //Componete de categorias, onde o usuario vai clicar e filtrar os produtos na tela.
 class Category extends StatefulWidget {

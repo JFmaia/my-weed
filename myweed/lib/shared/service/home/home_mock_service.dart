@@ -1,5 +1,5 @@
-import 'package:myweed/service/home/home_service.dart';
 import 'package:myweed/shared/models/categorys.dart';
+import 'home_service.dart';
 
 class HomeMockService implements HomeService {
   //Lista exemplo de categorias.
