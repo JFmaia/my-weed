@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:myweed/modules/register/register_controller.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
@@ -17,7 +18,7 @@ class PassawordPage extends StatelessWidget {
         leading: BackButton(
           color: AppColors.secundary,
           onPressed: () {
-            Navigator.of(context).pushReplacementNamed("/registe");
+            Modular.to.pushReplacementNamed('/registe');
           },
         ),
       ),
@@ -156,9 +157,8 @@ class PassawordPage extends StatelessWidget {
               MaterialButton(
                 height: 50,
                 minWidth: double.infinity,
-                onPressed: () {
-                  Navigator.of(context).pushReplacementNamed("/registe_image");
-                },
+                onPressed: () =>
+                    Modular.to.pushReplacementNamed('/registe_image'),
                 color: AppColors.secundary,
                 child: Text(
                   "Criar",
