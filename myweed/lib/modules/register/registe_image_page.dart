@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
 class RegisterImage extends StatefulWidget {
@@ -19,7 +20,7 @@ class _RegisterImageState extends State<RegisterImage> {
         leading: BackButton(
           color: AppColors.secundary,
           onPressed: () {
-            Navigator.of(context).pushReplacementNamed("/password");
+            Modular.to.pushReplacementNamed('/password');
           },
         ),
       ),
@@ -117,7 +118,7 @@ class _RegisterImageState extends State<RegisterImage> {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.of(context).pushReplacementNamed("/home");
+                      Modular.to.pushReplacementNamed('/home');
                     },
                   ),
                   MaterialButton(
@@ -132,7 +133,7 @@ class _RegisterImageState extends State<RegisterImage> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     onPressed: () {
-                      Navigator.of(context).pushReplacementNamed("/home");
+                      Modular.to.pushReplacementNamed('/home');
                     },
                   )
                 ],
