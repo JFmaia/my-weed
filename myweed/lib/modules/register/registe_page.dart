@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
 //Pagina de registro, onde os primeiros dados do usuário são cadastrados.
@@ -14,7 +15,7 @@ class RegistePage extends StatelessWidget {
         leading: BackButton(
           color: AppColors.secundary,
           onPressed: () {
-            Navigator.of(context).pushReplacementNamed("/login");
+            Modular.to.pushReplacementNamed('/login');
           },
         ),
       ),
@@ -114,7 +115,7 @@ class RegistePage extends StatelessWidget {
                 height: 50,
                 minWidth: double.infinity,
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed("/password");
+                  Modular.to.pushReplacementNamed('/password');
                 },
                 color: AppColors.secundary,
                 child: Text(
