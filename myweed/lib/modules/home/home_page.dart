@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-
 import 'package:myweed/modules/favorites/favorites_page.dart';
+import 'package:myweed/modules/feed/feed_page.dart';
 import 'package:myweed/modules/home/home_controller.dart';
-import 'package:myweed/modules/home_page/page_home.dart';
 import 'package:myweed/modules/profile/profile_page.dart';
 import 'package:myweed/modules/search/search_page.dart';
 
@@ -25,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     return Observer(
       builder: (context) => Scaffold(
         body: [
-          PageHome(
+          FeedPage(
             key: UniqueKey(),
           ),
           SearchPage(
