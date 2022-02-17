@@ -1,13 +1,22 @@
 import 'package:animated_card/animated_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:myweed/modules/login/login_controller.dart';
 import 'package:myweed/shared/components/button_login/button_login.dart';
 import 'package:myweed/shared/components/container_login/container_login.dart';
 import 'package:myweed/shared/theme/colors.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 /* Pagina de login, por onde é feita a autenticação de usuário, por email e senha ou google.*/
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final controller = LoginController();
   @override
   Widget build(BuildContext context) {
     final _media = MediaQuery.of(context).size;
@@ -77,9 +86,7 @@ class LoginPage extends StatelessWidget {
                     text: "Entrar",
                     corButton: AppColors.secundary,
                     corText: Colors.white,
-                    onPressed: () {
-                      Navigator.of(context).pushReplacementNamed("/home");
-                    },
+                    onPressed: () => Modular.to.pushReplacementNamed('/home'),
                   ),
                 ),
                 SizedBox(height: 12),
@@ -90,31 +97,34 @@ class LoginPage extends StatelessWidget {
                     text: "Cadastre-se",
                     corButton: AppColors.grey,
                     corText: AppColors.secundary,
-                    onPressed: () {
-                      Navigator.of(context).pushReplacementNamed("/registe");
-                    },
+                    onPressed: () =>
+                        Modular.to.pushReplacementNamed('/registe'),
                   ),
                 ),
                 SizedBox(height: 12),
-                AnimatedCard(
-                  direction: AnimatedCardDirection.bottom,
-                  initDelay: Duration(microseconds: 1),
-                  child: MaterialButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    height: 50,
-                    minWidth: double.infinity,
-                    color: AppColors.grey,
-                    child: Container(
-                      height: 30,
-                      width: 30,
-                      child: Image(
-                        image: AssetImage("assets/images/google.png"),
-                        fit: BoxFit.cover,
+                Observer(
+                  builder: (context) => AnimatedCard(
+                    direction: AnimatedCardDirection.bottom,
+                    initDelay: Duration(microseconds: 1),
+                    child: MaterialButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
                       ),
+                      height: 50,
+                      minWidth: double.infinity,
+                      color: AppColors.grey,
+                      child: Container(
+                        height: 30,
+                        width: 30,
+                        child: Image(
+                          image: AssetImage("assets/images/google.png"),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      onPressed: () {
+                        controller.login(context);
+                      },
                     ),
-                    onPressed: () {},
                   ),
                 ),
               ],
