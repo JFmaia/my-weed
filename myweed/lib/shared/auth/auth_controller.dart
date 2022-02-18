@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class AuthController {
   var _isAuthenticated = false;
@@ -10,10 +11,10 @@ class AuthController {
     if (user != null) {
       _user = user;
       _isAuthenticated = true;
-      Navigator.of(context).pushReplacementNamed("/home");
+      Modular.to.pushReplacementNamed('/home');
     } else {
       _isAuthenticated = false;
-      Navigator.of(context).pushReplacementNamed("/login");
+      Modular.to.pushReplacementNamed('/login');
     }
   }
 }
