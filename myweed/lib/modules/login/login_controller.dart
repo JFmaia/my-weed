@@ -1,15 +1,16 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
+import 'package:myweed/modules/login/repositories/login_repository.dart';
 import 'package:myweed/shared/auth/auth_controller.dart';
-import 'repositories/login_repository.dart';
 
 part 'login_controller.g.dart';
 
 class LoginController = _LoginController with _$LoginController;
 
 abstract class _LoginController with Store {
-  late LoginRepository repository;
   final authController = AuthController();
+  final repository = Modular.get<LoginRepository>();
 
   //Observa se a visibilidade estar ativa ou não.
   @observable
@@ -24,7 +25,7 @@ abstract class _LoginController with Store {
   @action
   Future<void> login(BuildContext context) async {
     try {
-      final response = repository.login();
+      final response = await repository.login();
       authController.setUser(context, response);
       print(response);
     } catch (error) {
