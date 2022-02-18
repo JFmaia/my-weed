@@ -1,16 +1,18 @@
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:myweed/modules/login/repositories/login_repository.dart';
 import '../../../shared/service/app_database.dart';
 
 class LoginRepositoryImpl implements LoginRepository {
-  final AppDatabase database;
-
-  LoginRepositoryImpl({
-    required this.database,
-  });
+  final database = Modular.get<AppDatabase>();
 
   @override
-  Future<void> login() async {
-    final response = await database.googleSignIn();
-    return response;
+  Future<GoogleSignInAccount?> login() async {
+    var response = await database.googleSignIn();
+    if (response == null) {
+      return null;
+    } else {
+      return response;
+    }
   }
 }
