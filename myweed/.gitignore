@@ -3,12 +3,14 @@
 *.log
 *.pyc
 *.swp
+*.json
 .DS_Store
 .atom/
 .buildlog/
 .history
 .svn/
 .vscode/
+
 
 
 # IntelliJ related
@@ -46,4 +48,4 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-/android/app/google-services.json
+
