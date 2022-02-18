@@ -3,17 +3,17 @@ import 'package:myweed/shared/service/app_database.dart';
 
 class FirebaseDatabase implements AppDatabase {
   @override
-  Future<void> googleSignIn() async {
+  Future<GoogleSignInAccount?> googleSignIn() async {
     GoogleSignIn _googleSignIn = GoogleSignIn(
       scopes: [
         'email',
       ],
     );
-    try {
-      final response = await _googleSignIn.signIn();
-      print(response);
-    } catch (error) {
-      print(error);
+    final response = await _googleSignIn.signIn();
+    if (response == null) {
+      return null;
+    } else {
+      return response;
     }
   }
 }
