@@ -1,6 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:myweed/modules/home/home_page.dart';
-
 import 'package:myweed/modules/login/login_page.dart';
 import 'package:myweed/modules/login/repositories/login_repository.dart';
 import 'package:myweed/modules/login/repositories/login_repository_impl.dart';
