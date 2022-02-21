@@ -1,9 +1,7 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:myweed/shared/auth/auth_controller.dart';
 import 'package:myweed/shared/theme/colors.dart';
 
-//Splash do app.
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
 
@@ -12,11 +10,11 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+  final AuthController controller = AuthController();
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration(seconds: 4)).then(
-      (_) => Modular.to.pushReplacementNamed('/login'),
+    Future.delayed(Duration(seconds: 2)).then(
+      (_) => controller.currentUser(context),
     );
     return Scaffold(
       backgroundColor: AppColors.primary,
@@ -34,34 +32,6 @@ class _SplashPageState extends State<SplashPage> {
                 fit: BoxFit.cover,
                 filterQuality: FilterQuality.high,
               ),
-            ),
-            SizedBox(
-              height: 4,
-            ),
-            FutureBuilder(
-              // Initialize FlutterFire:
-              future: _initialization,
-              builder: (context, snapshot) {
-                if (snapshot.hasError) {
-                  return Material(
-                    child: Center(
-                      child: Text(
-                        "Não é possível inicializar o Firebase",
-                        textDirection: TextDirection.ltr,
-                      ),
-                    ),
-                  );
-                } else {
-                  return Container(
-                    height: 20,
-                    width: 20,
-                    child: CircularProgressIndicator(
-                      color: AppColors.secundary,
-                      strokeWidth: 2,
-                    ),
-                  );
-                }
-              },
             ),
           ],
         ),
