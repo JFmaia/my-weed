@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                     initDelay: Duration(microseconds: 5),
                     curve: Curves.decelerate,
                     child: Container(
-                      height: _media.height * 0.25,
+                      height: _media.height * 0.20,
                       width: _media.width * 0.50,
                       child: Image.asset(
                         'assets/images/logo.png',
@@ -54,6 +54,9 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 30,
                 ),
                 AnimatedCard(
                   direction: AnimatedCardDirection.right,
