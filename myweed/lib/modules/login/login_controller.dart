@@ -40,6 +40,7 @@ abstract class _LoginController with Store {
     }
   }
 
+  @action
   Future<void> loginEmailAndPassword(
     BuildContext context,
     String email,

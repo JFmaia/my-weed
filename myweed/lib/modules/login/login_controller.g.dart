@@ -31,6 +31,16 @@ mixin _$LoginController on _LoginController, Store {
     return _$loginGoogleAsyncAction.run(() => super.loginGoogle(context));
   }
 
+  final _$loginEmailAndPasswordAsyncAction =
+      AsyncAction('_LoginController.loginEmailAndPassword');
+
+  @override
+  Future<void> loginEmailAndPassword(
+      BuildContext context, String email, String password) {
+    return _$loginEmailAndPasswordAsyncAction
+        .run(() => super.loginEmailAndPassword(context, email, password));
+  }
+
   final _$_LoginControllerActionController =
       ActionController(name: '_LoginController');
 
