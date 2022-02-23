@@ -23,18 +23,39 @@ abstract class _LoginController with Store {
   }
 
   @action
-  Future<void> login(BuildContext context) async {
+  Future<void> loginGoogle(BuildContext context) async {
     try {
       final response = await repository.login();
       final user = UserModel(
         name: response!.displayName!,
         imageURL: response.photoUrl,
+        email: response.email,
+        password: '',
       );
       authController.setUser(context, user);
       print(response);
     } catch (error) {
       authController.setUser(context, null);
       print(error);
+    }
+  }
+
+  Future<void> loginEmailAndPassword(
+    BuildContext context,
+    String email,
+    String password,
+  ) async {
+    final response = await repository.loginEmailAndPassword(email, password);
+    if (response == null) {
+      authController.setUser(context, null);
+    } else {
+      final user = UserModel(
+        email: response.user!.email,
+        name: response.user!.displayName,
+        password: password,
+        imageURL: '',
+      );
+      authController.setUser(context, user);
     }
   }
 }
