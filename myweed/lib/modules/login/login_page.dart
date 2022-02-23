@@ -125,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       onPressed: () {
-                        controller.login(context);
+                        controller.loginGoogle(context);
                       },
                     ),
                   ),
