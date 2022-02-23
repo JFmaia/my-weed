@@ -1,21 +1,29 @@
 import 'dart:convert';
 
 class UserModel {
-  final String name;
+  final String? name;
   final String? imageURL;
+  final String? email;
+  final String password;
 
   UserModel({
     required this.name,
     this.imageURL,
+    required this.email,
+    required this.password,
   });
 
   UserModel copyWith({
     String? name,
     String? imageURL,
+    String? email,
+    String? password,
   }) {
     return UserModel(
       name: name ?? this.name,
       imageURL: imageURL ?? this.imageURL,
+      email: email ?? this.email,
+      password: password ?? this.password,
     );
   }
 
@@ -23,6 +31,8 @@ class UserModel {
     return {
       'name': name,
       'imageURL': imageURL,
+      'email': email,
+      'password': password,
     };
   }
 
@@ -30,6 +40,8 @@ class UserModel {
     return UserModel(
       name: map['name'] ?? '',
       imageURL: map['imageURL'],
+      email: map['email'] ?? '',
+      password: map['password'] ?? '',
     );
   }
 
@@ -39,7 +51,9 @@ class UserModel {
       UserModel.fromMap(json.decode(source));
 
   @override
-  String toString() => 'UserModel(name: $name, imageURL: $imageURL)';
+  String toString() {
+    return 'UserModel(name: $name, imageURL: $imageURL, email: $email, password: $password)';
+  }
 
   @override
   bool operator ==(Object other) {
@@ -47,9 +61,16 @@ class UserModel {
 
     return other is UserModel &&
         other.name == name &&
-        other.imageURL == imageURL;
+        other.imageURL == imageURL &&
+        other.email == email &&
+        other.password == password;
   }
 
   @override
-  int get hashCode => name.hashCode ^ imageURL.hashCode;
+  int get hashCode {
+    return name.hashCode ^
+        imageURL.hashCode ^
+        email.hashCode ^
+        password.hashCode;
+  }
 }
