@@ -15,7 +15,32 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final controller = LoginController();
-  Future<void> handleSubmit(FormModel dataForm) async {}
+  Future<void> handleSubmit(FormModel dataForm) async {
+    final response = await controller.loginEmailAndPassword(
+      context,
+      dataForm.email,
+      dataForm.password,
+    );
+    if (response.isEmpty) {
+      controller.setLoading(false);
+    } else {
+      controller.setLoading(false);
+      _showError(response);
+    }
+  }
+
+  void _showError(String erro) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          erro,
+          style: TextStyle(color: AppColors.secundary),
+        ),
+        backgroundColor: AppColors.grey,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final _media = MediaQuery.of(context).size;
@@ -72,68 +97,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-// Row(
-//             children: [
-//               AnimatedCard(
-//                 direction: AnimatedCardDirection.right,
-//                 initDelay: Duration(microseconds: 1),
-//                 child: TextButton(
-//                   child: Text(
-//                     "Esqueceu sua senha?",
-//                     style: TextStyle(
-//                       color: Colors.white,
-//                     ),
-//                   ),
-//                   onPressed: () {},
-//                 ),
-//               ),
-//             ],
-//           ),
-//           SizedBox(height: 12),
-//           AnimatedCard(
-//             direction: AnimatedCardDirection.right,
-//             initDelay: Duration(microseconds: 1),
-//             child: ButtonPerson(
-//               text: "Entrar",
-//               corButton: AppColors.secundary,
-//               corText: Colors.white,
-//               onPressed: () => Modular.to.pushReplacementNamed('/home'),
-//             ),
-//           ),
-//           SizedBox(height: 12),
-//           AnimatedCard(
-//             direction: AnimatedCardDirection.right,
-//             initDelay: Duration(microseconds: 1),
-//             child: ButtonPerson(
-//               text: "Cadastre-se",
-//               corButton: AppColors.grey,
-//               corText: AppColors.secundary,
-//               onPressed: () => Modular.to.pushReplacementNamed('/registe'),
-//             ),
-//           ),
-//           SizedBox(height: 12),
-//           Observer(
-//             builder: (context) => AnimatedCard(
-//               direction: AnimatedCardDirection.bottom,
-//               initDelay: Duration(microseconds: 1),
-//               child: MaterialButton(
-//                 shape: RoundedRectangleBorder(
-//                   borderRadius: BorderRadius.circular(10),
-//                 ),
-//                 height: 50,
-//                 minWidth: double.infinity,
-//                 color: AppColors.grey,
-//                 child: Container(
-//                   height: 30,
-//                   width: 30,
-//                   child: Image(
-//                     image: AssetImage("assets/images/google.png"),
-//                     fit: BoxFit.cover,
-//                   ),
-//                 ),
-//                 onPressed: () {
-//                   _controller.loginGoogle(context);
-//                 },
-//               ),
-//             ),
-//           ),
