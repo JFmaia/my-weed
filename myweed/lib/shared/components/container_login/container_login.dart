@@ -21,6 +21,14 @@ class _ContainerLoginState extends State<ContainerLogin> {
   Widget build(BuildContext context) {
     final _controller = LoginController();
     final _formkey = GlobalKey<FormState>();
+    final _formData = FormModel();
+
+    void _submit() {
+      final isValid = _formkey.currentState?.validate() ?? false;
+      if (!isValid) return;
+
+      widget.onSubmit(_formData);
+    }
 
     return Container(
       decoration: BoxDecoration(
