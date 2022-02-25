@@ -24,30 +24,32 @@ class _ContainerLoginState extends State<ContainerLogin> {
         borderRadius: BorderRadius.circular(10),
         color: AppColors.grey,
       ),
-      child: Form(
-        key: _formkey,
-        child: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              decoration: const BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(color: Color(0xFF020B04)),
+      child: Observer(
+        builder: (context) => Form(
+          key: _formkey,
+          child: Column(
+            children: [
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                decoration: const BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(color: Color(0xFF020B04)),
+                  ),
+                ),
+                child: TextFormField(
+                  key: ValueKey("email"),
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: "Email",
+                    hintStyle: TextStyle(color: Colors.white54),
+                  ),
                 ),
               ),
-              child: TextFormField(
-                key: ValueKey("email"),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: "Email",
-                  hintStyle: TextStyle(color: Colors.white54),
-                ),
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-              child: Observer(
-                builder: (context) => TextFormField(
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                child: TextFormField(
                   key: ValueKey("password"),
                   obscureText: _controller.isVisible,
                   decoration: InputDecoration(
@@ -71,8 +73,8 @@ class _ContainerLoginState extends State<ContainerLogin> {
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
