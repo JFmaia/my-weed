@@ -4,6 +4,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:myweed/modules/login/login_controller.dart';
 import 'package:myweed/shared/components/button_login/button_login.dart';
 import 'package:myweed/shared/components/container_login/container_login.dart';
+import 'package:myweed/shared/models/form_model.dart';
 import 'package:myweed/shared/theme/colors.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -17,6 +18,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final controller = LoginController();
+  Future<void> handleSubmit(FormModel dataForm) async {}
   @override
   Widget build(BuildContext context) {
     final _media = MediaQuery.of(context).size;
@@ -61,7 +63,9 @@ class _LoginPageState extends State<LoginPage> {
                 AnimatedCard(
                   direction: AnimatedCardDirection.right,
                   initDelay: Duration(microseconds: 1),
-                  child: ContainerLogin(),
+                  child: ContainerLogin(
+                    onSubmit: handleSubmit,
+                  ),
                 ),
                 SizedBox(height: 10),
                 Row(
