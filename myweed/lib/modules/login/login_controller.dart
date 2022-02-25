@@ -61,12 +61,12 @@ abstract class _LoginController with Store {
   }
 
   @action
-  Future<String>? verfEmail(String email) {
+  String? verfEmail(String email) {
     return null;
   }
 
   @action
-  Future<String>? verfPassword(String password) {
+  String? verfPassword(String password) {
     return null;
   }
 }

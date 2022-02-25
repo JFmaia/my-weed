@@ -56,7 +56,7 @@ mixin _$LoginController on _LoginController, Store {
   }
 
   @override
-  Future<String>? verfEmail(String email) {
+  String? verfEmail(String email) {
     final _$actionInfo = _$_LoginControllerActionController.startAction(
         name: '_LoginController.verfEmail');
     try {
@@ -67,7 +67,7 @@ mixin _$LoginController on _LoginController, Store {
   }
 
   @override
-  Future<String>? verfPassword(String password) {
+  String? verfPassword(String password) {
     final _$actionInfo = _$_LoginControllerActionController.startAction(
         name: '_LoginController.verfPassword');
     try {
