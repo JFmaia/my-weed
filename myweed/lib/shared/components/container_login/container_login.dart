@@ -56,6 +56,7 @@ class _ContainerLoginState extends State<ContainerLogin> {
                     hintText: "Email",
                     hintStyle: TextStyle(color: Colors.white54),
                   ),
+                  validator: (_email) => _controller.verfEmail(_email!),
                 ),
               ),
               Container(
@@ -85,6 +86,8 @@ class _ContainerLoginState extends State<ContainerLogin> {
                       },
                     ),
                   ),
+                  validator: (_password) =>
+                      _controller.verfPassword(_password!),
                 ),
               ),
             ],
