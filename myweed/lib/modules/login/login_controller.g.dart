@@ -56,6 +56,28 @@ mixin _$LoginController on _LoginController, Store {
   }
 
   @override
+  Future<String>? verfEmail(String email) {
+    final _$actionInfo = _$_LoginControllerActionController.startAction(
+        name: '_LoginController.verfEmail');
+    try {
+      return super.verfEmail(email);
+    } finally {
+      _$_LoginControllerActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  Future<String>? verfPassword(String password) {
+    final _$actionInfo = _$_LoginControllerActionController.startAction(
+        name: '_LoginController.verfPassword');
+    try {
+      return super.verfPassword(password);
+    } finally {
+      _$_LoginControllerActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 isVisible: ${isVisible}

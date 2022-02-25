@@ -59,4 +59,14 @@ abstract class _LoginController with Store {
       authController.setUser(context, user);
     }
   }
+
+  @action
+  Future<String>? verfEmail(String email) {
+    return null;
+  }
+
+  @action
+  Future<String>? verfPassword(String password) {
+    return null;
+  }
 }
