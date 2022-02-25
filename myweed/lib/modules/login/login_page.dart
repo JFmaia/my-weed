@@ -22,9 +22,8 @@ class _LoginPageState extends State<LoginPage> {
       dataForm.password,
     );
     if (response.isEmpty) {
-      controller.setLoading(false);
+      return null;
     } else {
-      controller.setLoading(false);
       _showError(response);
     }
   }
@@ -46,9 +45,9 @@ class _LoginPageState extends State<LoginPage> {
     final _media = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.primary,
-      body: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20),
-        child: SafeArea(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20, right: 20),
           child: SingleChildScrollView(
             physics: BouncingScrollPhysics(
               parent: ScrollPhysics(
