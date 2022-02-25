@@ -24,21 +24,6 @@ mixin _$LoginController on _LoginController, Store {
     });
   }
 
-  final _$loadingAtom = Atom(name: '_LoginController.loading');
-
-  @override
-  bool get loading {
-    _$loadingAtom.reportRead();
-    return super.loading;
-  }
-
-  @override
-  set loading(bool value) {
-    _$loadingAtom.reportWrite(value, super.loading, () {
-      super.loading = value;
-    });
-  }
-
   final _$loginGoogleAsyncAction = AsyncAction('_LoginController.loginGoogle');
 
   @override
@@ -71,43 +56,9 @@ mixin _$LoginController on _LoginController, Store {
   }
 
   @override
-  void setLoading(bool i) {
-    final _$actionInfo = _$_LoginControllerActionController.startAction(
-        name: '_LoginController.setLoading');
-    try {
-      return super.setLoading(i);
-    } finally {
-      _$_LoginControllerActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  String? verfEmail(String email) {
-    final _$actionInfo = _$_LoginControllerActionController.startAction(
-        name: '_LoginController.verfEmail');
-    try {
-      return super.verfEmail(email);
-    } finally {
-      _$_LoginControllerActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  String? verfPassword(String password) {
-    final _$actionInfo = _$_LoginControllerActionController.startAction(
-        name: '_LoginController.verfPassword');
-    try {
-      return super.verfPassword(password);
-    } finally {
-      _$_LoginControllerActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
   String toString() {
     return '''
-isVisible: ${isVisible},
-loading: ${loading}
+isVisible: ${isVisible}
     ''';
   }
 }

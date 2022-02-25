@@ -16,18 +16,10 @@ abstract class _LoginController with Store {
   @observable
   bool isVisible = true;
 
-  @observable
-  bool loading = true;
-
   //Muda o estado da visuaização da senha.
   @action
   void setVisible(bool i) {
     isVisible = i;
-  }
-
-  @action
-  void setLoading(bool i) {
-    loading = i;
   }
 
   @action
@@ -67,24 +59,6 @@ abstract class _LoginController with Store {
       );
       authController.setUser(context, user);
       return "";
-    }
-  }
-
-  @action
-  String? verfEmail(String email) {
-    if (email.isEmpty) {
-      return "Por favor digite seu email!";
-    } else {
-      return null;
-    }
-  }
-
-  @action
-  String? verfPassword(String password) {
-    if (password.isEmpty) {
-      return "Por favor digite sua senha!";
-    } else {
-      return null;
     }
   }
 }
