@@ -24,6 +24,21 @@ mixin _$LoginController on _LoginController, Store {
     });
   }
 
+  final _$loadingAtom = Atom(name: '_LoginController.loading');
+
+  @override
+  bool get loading {
+    _$loadingAtom.reportRead();
+    return super.loading;
+  }
+
+  @override
+  set loading(bool value) {
+    _$loadingAtom.reportWrite(value, super.loading, () {
+      super.loading = value;
+    });
+  }
+
   final _$loginGoogleAsyncAction = AsyncAction('_LoginController.loginGoogle');
 
   @override
@@ -35,7 +50,7 @@ mixin _$LoginController on _LoginController, Store {
       AsyncAction('_LoginController.loginEmailAndPassword');
 
   @override
-  Future<void> loginEmailAndPassword(
+  Future<String> loginEmailAndPassword(
       BuildContext context, String email, String password) {
     return _$loginEmailAndPasswordAsyncAction
         .run(() => super.loginEmailAndPassword(context, email, password));
@@ -50,6 +65,17 @@ mixin _$LoginController on _LoginController, Store {
         name: '_LoginController.setVisible');
     try {
       return super.setVisible(i);
+    } finally {
+      _$_LoginControllerActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void setLoading(bool i) {
+    final _$actionInfo = _$_LoginControllerActionController.startAction(
+        name: '_LoginController.setLoading');
+    try {
+      return super.setLoading(i);
     } finally {
       _$_LoginControllerActionController.endAction(_$actionInfo);
     }
@@ -80,7 +106,8 @@ mixin _$LoginController on _LoginController, Store {
   @override
   String toString() {
     return '''
-isVisible: ${isVisible}
+isVisible: ${isVisible},
+loading: ${loading}
     ''';
   }
 }

@@ -16,10 +16,18 @@ abstract class _LoginController with Store {
   @observable
   bool isVisible = true;
 
+  @observable
+  bool loading = true;
+
   //Muda o estado da visuaização da senha.
   @action
   void setVisible(bool i) {
     isVisible = i;
+  }
+
+  @action
+  void setLoading(bool i) {
+    loading = i;
   }
 
   @action
@@ -41,7 +49,7 @@ abstract class _LoginController with Store {
   }
 
   @action
-  Future<void> loginEmailAndPassword(
+  Future<String> loginEmailAndPassword(
     BuildContext context,
     String email,
     String password,
@@ -49,6 +57,7 @@ abstract class _LoginController with Store {
     final response = await repository.loginEmailAndPassword(email, password);
     if (response == null) {
       authController.setUser(context, null);
+      return "Não foi possivel fazer o login!";
     } else {
       final user = UserModel(
         email: response.user!.email,
@@ -57,6 +66,7 @@ abstract class _LoginController with Store {
         imageURL: '',
       );
       authController.setUser(context, user);
+      return "";
     }
   }
 
