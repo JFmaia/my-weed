@@ -33,8 +33,8 @@ class _ContainerLoginState extends State<ContainerLogin> {
       widget.onSubmit(_formData);
     }
 
-    return Observer(
-      builder: (context) => Column(
+    return Container(
+      child: Column(
         children: [
           Container(
             decoration: BoxDecoration(
@@ -64,39 +64,53 @@ class _ContainerLoginState extends State<ContainerLogin> {
                             hintText: "Email",
                             hintStyle: TextStyle(color: Colors.white54),
                           ),
-                          validator: (_email) => _controller.verfEmail(_email!),
+                          validator: (_email) {
+                            final email = _email ?? '';
+                            if (!email.contains('@')) {
+                              return "Email informado invalido!";
+                            }
+                            return null;
+                          },
                         ),
                       ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 10, horizontal: 20),
-                        child: TextFormField(
-                          key: ValueKey("password"),
-                          initialValue: _formData.password,
-                          obscureText: _controller.isVisible,
-                          onChanged: (password) =>
-                              _formData.password = password,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Password",
-                            hintStyle: TextStyle(color: Colors.white54),
-                            suffixIcon: GestureDetector(
-                              child: _controller.isVisible
-                                  ? Icon(
-                                      Icons.visibility_off,
-                                      color: AppColors.secundary,
-                                    )
-                                  : Icon(
-                                      Icons.visibility,
-                                      color: AppColors.secundary,
-                                    ),
-                              onTap: () {
-                                _controller.setVisible(!_controller.isVisible);
-                              },
+                      Observer(
+                        builder: (context) => Container(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 20),
+                          child: TextFormField(
+                            key: ValueKey("password"),
+                            initialValue: _formData.password,
+                            obscureText: _controller.isVisible,
+                            onChanged: (password) =>
+                                _formData.password = password,
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Password",
+                              hintStyle: TextStyle(color: Colors.white54),
+                              suffixIcon: GestureDetector(
+                                child: _controller.isVisible
+                                    ? Icon(
+                                        Icons.visibility_off,
+                                        color: AppColors.secundary,
+                                      )
+                                    : Icon(
+                                        Icons.visibility,
+                                        color: AppColors.secundary,
+                                      ),
+                                onTap: () {
+                                  _controller
+                                      .setVisible(!_controller.isVisible);
+                                },
+                              ),
                             ),
+                            validator: (_password) {
+                              final password = _password ?? '';
+                              if (password.length < 6) {
+                                return "A senha deve ter no mínimo 6 caracteres.";
+                              }
+                              return null;
+                            },
                           ),
-                          validator: (_password) =>
-                              _controller.verfPassword(_password!),
                         ),
                       ),
                     ],
@@ -145,29 +159,27 @@ class _ContainerLoginState extends State<ContainerLogin> {
             ),
           ),
           SizedBox(height: 12),
-          Observer(
-            builder: (context) => AnimatedCard(
-              direction: AnimatedCardDirection.bottom,
-              initDelay: Duration(microseconds: 1),
-              child: MaterialButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                height: 50,
-                minWidth: double.infinity,
-                color: AppColors.grey,
-                child: Container(
-                  height: 30,
-                  width: 30,
-                  child: Image(
-                    image: AssetImage("assets/images/google.png"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                onPressed: () {
-                  _controller.loginGoogle(context);
-                },
+          AnimatedCard(
+            direction: AnimatedCardDirection.bottom,
+            initDelay: Duration(microseconds: 1),
+            child: MaterialButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
               ),
+              height: 50,
+              minWidth: double.infinity,
+              color: AppColors.grey,
+              child: Container(
+                height: 30,
+                width: 30,
+                child: Image(
+                  image: AssetImage("assets/images/google.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              onPressed: () {
+                _controller.loginGoogle(context);
+              },
             ),
           ),
         ],
