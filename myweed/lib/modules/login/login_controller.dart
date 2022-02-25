@@ -62,11 +62,19 @@ abstract class _LoginController with Store {
 
   @action
   String? verfEmail(String email) {
-    return null;
+    if (email.isEmpty) {
+      return "Por favor digite seu email!";
+    } else {
+      return null;
+    }
   }
 
   @action
   String? verfPassword(String password) {
-    return null;
+    if (password.isEmpty) {
+      return "Por favor digite sua senha!";
+    } else {
+      return null;
+    }
   }
 }
