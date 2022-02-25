@@ -128,7 +128,7 @@ class _ContainerLoginState extends State<ContainerLogin> {
             text: "Entrar",
             corButton: AppColors.secundary,
             corText: Colors.white,
-            onPressed: () => Modular.to.pushReplacementNamed('/home'),
+            onPressed: () => _submit,
           ),
         ),
         SizedBox(height: 12),
