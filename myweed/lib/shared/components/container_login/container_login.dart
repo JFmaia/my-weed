@@ -26,7 +26,6 @@ class _ContainerLoginState extends State<ContainerLogin> {
     void _submit() {
       final isValid = _formkey.currentState?.validate() ?? false;
       if (!isValid) return;
-
       widget.onSubmit(_formData);
     }
 
@@ -51,6 +50,7 @@ class _ContainerLoginState extends State<ContainerLogin> {
                 child: TextFormField(
                   key: ValueKey("email"),
                   initialValue: _formData.email,
+                  onChanged: (email) => _formData.email = email,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: "Email",
@@ -65,6 +65,7 @@ class _ContainerLoginState extends State<ContainerLogin> {
                   key: ValueKey("password"),
                   initialValue: _formData.password,
                   obscureText: _controller.isVisible,
+                  onChanged: (password) => _formData.password = password,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: "Password",
