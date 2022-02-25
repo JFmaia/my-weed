@@ -50,6 +50,7 @@ class _ContainerLoginState extends State<ContainerLogin> {
                 ),
                 child: TextFormField(
                   key: ValueKey("email"),
+                  initialValue: _formData.email,
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: "Email",
@@ -62,6 +63,7 @@ class _ContainerLoginState extends State<ContainerLogin> {
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: TextFormField(
                   key: ValueKey("password"),
+                  initialValue: _formData.password,
                   obscureText: _controller.isVisible,
                   decoration: InputDecoration(
                     border: InputBorder.none,
