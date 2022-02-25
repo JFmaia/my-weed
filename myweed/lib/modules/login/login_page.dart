@@ -20,9 +20,19 @@ class _LoginPageState extends State<LoginPage> {
   final _formkey = GlobalKey<FormState>();
   final _formData = FormModel();
 
-  void _submit() {
+  Future<void> _submit() async {
     final isValid = _formkey.currentState?.validate() ?? false;
     if (!isValid) return;
+    final response = await controller.loginEmailAndPassword(
+      context,
+      _formData.email,
+      _formData.password,
+    );
+    if (response == "") {
+      return;
+    } else {
+      _showError(response);
+    }
   }
 
   void _showError(String erro) {
