@@ -16,6 +16,9 @@ class _ContainerLoginState extends State<ContainerLogin> {
   Widget build(BuildContext context) {
     final _controller = LoginController();
     final _formkey = GlobalKey<FormState>();
+    final String _email;
+    final String _password;
+
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
