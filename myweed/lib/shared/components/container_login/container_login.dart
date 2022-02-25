@@ -30,9 +30,10 @@ class _ContainerLoginState extends State<ContainerLogin> {
               ),
             ),
             child: TextFormField(
+              key: ValueKey("email"),
               decoration: InputDecoration(
                 border: InputBorder.none,
-                hintText: "Email or Phone number",
+                hintText: "Email",
                 hintStyle: TextStyle(color: Colors.white54),
               ),
             ),
@@ -41,6 +42,7 @@ class _ContainerLoginState extends State<ContainerLogin> {
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             child: Observer(
               builder: (context) => TextFormField(
+                key: ValueKey("password"),
                 obscureText: _controller.isVisible,
                 decoration: InputDecoration(
                   border: InputBorder.none,
