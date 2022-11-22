@@ -20,6 +20,7 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: AppColors.primary,
       ),
+      // ignore: deprecated_member_use
     ).modular();
   }
 }
